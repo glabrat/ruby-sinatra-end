@@ -1,9 +1,9 @@
 class CreatePartners < ActiveRecord::Migration[5.2]
   def self.up
     create_table :partners do |t|
-      t.string :name
-      t.string :last_name
-      t.integer :rut
+      t.string :name, null: false
+      t.string :last_name, null: false
+      t.integer :rut, null: false
       t.timestamps
     end
     add_index :partners, :rut, unique: true

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#https://gist.github.com/mlafeldt/3105249/raw/91738cbc6a04a0151f6934aa170d238554f8309e/bootstrap
+
+set -e
+
+echo "Setting up your environment..."
+
+#
+# Check for Bundler
+#
+if command -v bundle >/dev/null; then
+    echo "  + Bundler found."
+else
+    echo "  x You need to install Bundler:"
+    echo "    gem install bundler"
+    exit 1
+fi
+
+#
+# Install gems
+#
+echo "  + Bootstrapping your Rubies."
+bundle install --binstubs --local --path vendor/gems
+
+echo "Done!"

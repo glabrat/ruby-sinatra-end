@@ -9,7 +9,6 @@ gem "sinatra-activerecord"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 
-gem 'thin'
 gem 'json'
 gem 'rake'
 gem 'rack-flash3'
@@ -20,6 +19,8 @@ gem 'tilt'
 group :devepment do
   gem "sqlite3"
   gem "tux"
+  gem 'shotgun'
+  gem 'thin'
 end
 
 group :production do

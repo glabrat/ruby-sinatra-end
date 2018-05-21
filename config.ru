@@ -1,10 +1,13 @@
 # config.ru
 
-#require './app'
-#run Sinatra::Application
-
 #using modular approach
 
-require 'rubygems'
-require File.join(File.dirname(__FILE__), 'app.rb')
-run MyApp
+require File.expand_path(File.dirname(__FILE__) + '/app/boot')
+
+#map('/') { run MyApp::App }
+
+run Rack::Builder.new {
+  map "/" do
+    run MyApp::App
+  end
+}

@@ -9,6 +9,14 @@ gem "sinatra-activerecord"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 
+gem 'thin'
+gem 'json'
+gem 'rake'
+gem 'rack-flash3'
+gem 'sinatra-partial'
+gem 'sinatra-contrib'
+gem 'tilt'
+
 group :devepment do
   gem "sqlite3"
   gem "tux"

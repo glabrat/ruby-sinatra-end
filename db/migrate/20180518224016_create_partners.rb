@@ -3,9 +3,10 @@ class CreatePartners < ActiveRecord::Migration[5.2]
     create_table :partners do |t|
       t.string :name
       t.string :last_name
-      t.integer :rut, unique: true
+      t.integer :rut
       t.timestamps
     end
+    add_index :partners, :rut, unique: true
   end
 
   def self.down

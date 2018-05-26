@@ -1,0 +1,8 @@
+#!/bin/sh
+
+: ${SERVER:=thin}
+: ${HOST:=0.0.0.0}
+: ${PORT:=4567}
+: ${ENVIROMENT:=development}
+
+exec bundle exec shotgun --server "$SERVER" --host "$HOST" --port "$PORT" --env "$ENVIROMENT"

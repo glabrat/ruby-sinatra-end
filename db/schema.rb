@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 2018_05_18_224016) do
   enable_extension "plpgsql"
 
   create_table "partners", force: :cascade do |t|
-    t.string "name"
-    t.string "last_name"
-    t.integer "rut"
+    t.string "name", null: false
+    t.string "last_name", null: false
+    t.integer "rut", null: false
+    t.string "dv", limit: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rut"], name: "index_partners_on_rut", unique: true

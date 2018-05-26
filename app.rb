@@ -2,6 +2,8 @@
 
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/json'
+require "sinatra/reloader" if development?
 require './config/environments'
 
 
@@ -12,6 +14,7 @@ get "/" do
   @partners = Partners.order("created_at DESC")
   @title = "Hi."
   erb :"partners/index"
+  #json @partners
 end
 
 helpers do

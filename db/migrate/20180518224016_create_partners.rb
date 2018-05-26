@@ -4,6 +4,7 @@ class CreatePartners < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.string :last_name, null: false
       t.integer :rut, null: false
+      t.string :dv, null: false, limit: 1
       t.timestamps
     end
     add_index :partners, :rut, unique: true

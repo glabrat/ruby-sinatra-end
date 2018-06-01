@@ -1,0 +1,8 @@
+<ul>
+<% @partners.each do |partner| %>
+ <li>
+   <h4><a href="/partners/<%= partner.id %>"><%= partner.name %></a></h4>
+   <p>Created: <%= partner.created_at %></p>
+ </li>
+<% end %>
+</ul>
